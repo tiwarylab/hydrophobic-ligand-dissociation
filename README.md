@@ -1,1 +1,1 @@
-Code for the paper "Mchine-learned reaction coordinates for hydrophobic ligand dissociation"
+Code for the paper "Machine-learned reaction coordinates for hydrophobic ligand dissociation"
