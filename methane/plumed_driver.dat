@@ -1,0 +1,21 @@
+# vim:ft=plumed
+MOLINFO STRUCTURE=nvt.pdb
+# bias the distance of the 'methane molecule' from the center of the box
+c1: CENTER ATOMS=5968
+c2: CENTER ATOMS=12204
+a1: FIXEDATOM AT=1.75,1.65,1.50
+g1: GROUP ATOMS=c1,c2
+d1: DISTANCE ATOMS=c1,c2 COMPONENTS
+tmp1: COMBINE ARG=d1.x,d1.y POWERS=2,2 PERIODIC=NO
+rho1: COMBINE ARG=tmp1 POWERS=0.5 PERIODIC=NO
+d2: DISTANCE ATOMS=a1,c2 COMPONENTS
+tmp2: COMBINE ARG=d2.x,d2.y POWERS=2,2 PERIODIC=NO
+rho2: COMBINE ARG=tmp2 POWERS=0.5 PERIODIC=NO
+OW: GROUP ATOMS=12205-19925:4
+# pocket coordination number
+c3: COORDINATION GROUPA=c1 GROUPB=OW R_0=0.8
+# methane coordination number
+c4: COORDINATION GROUPA=c2 GROUPB=OW R_0=0.8
+
+# Print both collective variables and the value of the bias potential on COLVAR file
+PRINT ARG=d2.x,d2.y,d2.z,rho2,c3,c4  FILE=COLVAR STRIDE=1

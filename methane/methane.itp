@@ -1,0 +1,7 @@
+[ moleculetype ]
+; molname	nrexcl
+MTE		1
+
+[ atoms ]
+     1  C1           1  MTE 	 C1     1     0.000000	16.043
+
