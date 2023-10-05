@@ -8,20 +8,20 @@ tmp: COMBINE ARG=d1.x,d1.y POWERS=2,2 PERIODIC=NO
 rho: COMBINE ARG=tmp POWERS=0.5 PERIODIC=NO 
 # since I don't see a spring constant defined in the SI of the paper,
 # I will use a spring constant of 2 kT
-uwall: UPPER_WALLS ARG=d1.z,rho AT=2.1,1.2 KAPPA=100000.0,100000.0 EXP=4,4
+uwall: UPPER_WALLS ARG=d1.z AT=2.1 KAPPA=100000.0 EXP=4
+p: RESTRAINT ARG=rho AT=0.0 KAPPA=1000.0
 metad: METAD ...
-   ARG=d1.z,rho
+   ARG=d1.z
    # Deposit a Gaussian every 300 time steps, with initial height equal to 2.0 kJ/mol
    PACE=300 HEIGHT=2.0
    # the bias factor should be chosen wisely
    BIASFACTOR=15 TEMP=300.0
    # Gaussian width (sigma) should be chosen based on CV fluctuation in unbiased run
-   SIGMA=0.03,0.01
+   SIGMA=0.03
    #Gaussians will be written to file and also stored on grid
-   GRID_MIN=-1,0 GRID_MAX=5,2.5
+   GRID_MIN=-1 GRID_MAX=5
    CALC_RCT
 ...
 DUMPMASSCHARGE FILE=mcfile
 # Print both collective variables and the value of the bias potential on COLVAR file
 PRINT ARG=*  FILE=COLVAR STRIDE=100
-
