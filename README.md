@@ -5,3 +5,7 @@ The folder "methane" contains all the run files required to reproduce the simula
 Here is a link to the published version of the manuscript:
 
 https://pubs.acs.org/doi/full/10.1021/acs.jpcb.3c08304
+
+<video width="320" height="240" controls>
+  <source src="buckyball_hydrated.mp4" type="video/mp4">
+</video>
