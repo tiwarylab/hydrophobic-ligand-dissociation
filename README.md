@@ -6,6 +6,4 @@ Here is a link to the published version of the manuscript:
 
 https://pubs.acs.org/doi/full/10.1021/acs.jpcb.3c08304
 
-<video width="320" height="240" controls>
-  <source src="buckyball_hydrated.mp4" type="video/mp4">
-</video>
+![Alt Text](https://github.com/tiwarylab/hydrophobic-ligand-dissociation/blob/main/buckyball_movie-ezgif.com-crop.gif)
